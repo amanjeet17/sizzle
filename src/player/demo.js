@@ -25,7 +25,7 @@ class Video extends Component {
             playbackRate: 1.0,
             loop: false
         }
-        console.log("Constructor props", props);
+        // console.log("Constructor props", props);
     }
 
     componentWillMount() {
@@ -122,7 +122,7 @@ class Video extends Component {
     }
 
     handleProgress = state => {
-        console.log('onProgress', state)
+        // console.log('onProgress', state)
         // We only want to update time slider if we are not currently seeking
         if (!this.state.seeking) {
             this.setState(state)
@@ -152,8 +152,8 @@ class Video extends Component {
     }
 
     ref = player => {
-        console.log("refs",player)
-
+        // console.log("refs",player)
+        this.props.passRef(player)
         this.player = player
     }
 
